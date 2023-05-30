@@ -1,25 +1,53 @@
-## PowerShell
-
-`git clone git@github.com:kimsk/chia-sim-cats.git my-chia-sim-cats`
-
 ### set up
 
 ```sh
+git clone git@github.com:kimsk/chia-sim-cats.git my-chia-sim-cats
 cd my-chia-sim-cats
-$env:CHIA_SIM_ROOT=(pwd)
-$env:CHIA_ROOT="$($env:CHIA_SIM_ROOT)/main"
-$env:CHIA_KEYS_ROOT="$($env:CHIA_ROOT)/keys"
 
-chia keys add -l farmer -f $env:CHIA_KEYS_ROOT/farmer.txt
+```
+
+#### PowerShell
+
+```sh
+$CHIA_SIM_ROOT=(pwd)
+$env:CHIA_ROOT="$($CHIA_SIM_ROOT)/main"
+$env:CHIA_KEYS_ROOT="$($env:CHIA_ROOT)/keys"
+$CHIA_KEYS_ROOT=$env:CHIA_KEYS_ROOT
+
+```
+
+#### bash
+
+```sh
+export CHIA_SIM_ROOT="$(pwd)"
+export CHIA_ROOT="$CHIA_SIM_ROOT/main"
+export CHIA_KEYS_ROOT="$CHIA_ROOT/keys"
+
+```
+
+> make sure CHIA_ROOT and CHIA_KEYS_ROOT are set correctly before proceed
+
+```sh
+chia init --fix-ssl-permissions
+chia keys add -l farmer -f $CHIA_KEYS_ROOT/farmer.txt
+
 ```
 
 ### start
 
 ```sh
-chia dev sim --root-path $env:CHIA_SIM_ROOT start -w
+chia dev sim --root-path $CHIA_SIM_ROOT start -w
+
 ```
 
 ### verify
+
+```sh
+chia show -s
+chia keys show
+chia wallet show -f 3682562999
+
+```
 
 ```sh
 ❯ chia show -s
@@ -87,7 +115,19 @@ CAT2:
 
 - autofarm: `off`
 
-> run `chia dev sim --root-path $env:CHIA_SIM_ROOT farm` to farm manually or `chia dev sim --root-path $env:CHIA_SIM_ROOT autofarm on` to farm automatically.
+> To farm manually, run
+
+```sh
+chia dev sim --root-path $CHIA_SIM_ROOT farm
+
+```
+
+> Or to farm automatically, run
+
+```sh
+chia dev sim --root-path $CHIA_SIM_ROOT autofarm on
+
+```
 
 ## farming & prefarm
 
