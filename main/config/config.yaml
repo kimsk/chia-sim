@@ -1,0 +1,400 @@
+ALERTS_URL: https://download.chia.net/notify/mainnet_alert.txt
+CHIA_ALERTS_PUBKEY: 89b7fd87cb56e926ecefb879a29aae308be01f31980569f6a75a69d2a9a69daefd71fb778d865f7c50d6c967e3025937
+chia_ssl_ca:
+  crt: config/ssl/ca/chia_ca.crt
+  key: config/ssl/ca/chia_ca.key
+daemon_heartbeat: 300
+daemon_max_message_size: 50000000
+daemon_port: 40950
+daemon_ssl:
+  private_crt: config/ssl/daemon/private_daemon.crt
+  private_key: config/ssl/daemon/private_daemon.key
+data_layer:
+  client_timeout: 15
+  database_path: data_layer/db/data_layer_CHALLENGE.sqlite
+  downloaders: []
+  fee: 1000000000
+  host_ip: 0.0.0.0
+  host_port: 8575
+  logging: &id001
+    log_filename: log/debug.log
+    log_level: INFO
+    log_maxbytesrotation: 52428800
+    log_maxfilesrotation: 7
+    log_stdout: false
+    log_syslog: false
+    log_syslog_host: localhost
+    log_syslog_port: 514
+    log_use_gzip: false
+  manage_data_interval: 60
+  port: 8561
+  rpc_port: 8562
+  rpc_server_max_request_body_size: 26214400
+  selected_network: testnet10
+  server_files_location: data_layer/db/server_files_location_CHALLENGE
+  ssl:
+    private_crt: config/ssl/data_layer/private_data_layer.crt
+    private_key: config/ssl/data_layer/private_data_layer.key
+    public_crt: config/ssl/data_layer/public_data_layer.crt
+    public_key: config/ssl/data_layer/public_data_layer.key
+  start_rpc_server: true
+  uploaders: []
+  wallet_peer:
+    host: localhost
+    port: 9256
+farmer:
+  full_node_peer:
+    host: localhost
+    port: 58444
+  harvester_peer:
+    host: localhost
+    port: 8448
+  logging: *id001
+  network_overrides: &id002
+    config:
+      mainnet:
+        address_prefix: xch
+        default_full_node_port: 8444
+      simulator0:
+        address_prefix: txch
+        default_full_node_port: 52894
+      testnet0:
+        address_prefix: txch
+        default_full_node_port: 58444
+      testnet1:
+        address_prefix: txch
+      testnet10:
+        address_prefix: txch
+        default_full_node_port: 58444
+      testnet2:
+        address_prefix: txch
+      testnet3:
+        address_prefix: txch
+      testnet4:
+        address_prefix: txch
+      testnet7:
+        address_prefix: txch
+        default_full_node_port: 58444
+    constants:
+      mainnet:
+        GENESIS_CHALLENGE: ccd5bb71183532bff220ba46c268991a3ff07eb358e8255a65c30a2dce0e5fbb
+        GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: 3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af
+        GENESIS_PRE_FARM_POOL_PUZZLE_HASH: d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc
+      simulator0:
+        GENESIS_CHALLENGE: eb8c4d20b322be8d9fddbf9412016bdffe9a2901d7edb0e364e94266d0e095f7
+        GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: ef9dfd5f8c4e2ca34470a74449cbc4d52671d5b18a351dde8dd673558857f48f
+        GENESIS_PRE_FARM_POOL_PUZZLE_HASH: ef9dfd5f8c4e2ca34470a74449cbc4d52671d5b18a351dde8dd673558857f48f
+        MIN_PLOT_SIZE: 18
+      testnet0:
+        GENESIS_CHALLENGE: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+        GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: 3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af
+        GENESIS_PRE_FARM_POOL_PUZZLE_HASH: d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc
+        MIN_PLOT_SIZE: 18
+      testnet10:
+        AGG_SIG_ME_ADDITIONAL_DATA: ae83525ba8d1dd3f09b277de18ca3e43fc0af20d20c4b3e92ef2a48bd291ccb2
+        DIFFICULTY_CONSTANT_FACTOR: 10052721566054
+        DIFFICULTY_STARTING: 30
+        EPOCH_BLOCKS: 768
+        GENESIS_CHALLENGE: ae83525ba8d1dd3f09b277de18ca3e43fc0af20d20c4b3e92ef2a48bd291ccb2
+        GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: 3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af
+        GENESIS_PRE_FARM_POOL_PUZZLE_HASH: d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc
+        MEMPOOL_BLOCK_BUFFER: 10
+        MIN_PLOT_SIZE: 18
+        SOFT_FORK2_HEIGHT: 0
+      testnet2:
+        DIFFICULTY_CONSTANT_FACTOR: 10052721566054
+        GENESIS_CHALLENGE: ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad
+        GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: 3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af
+        GENESIS_PRE_FARM_POOL_PUZZLE_HASH: d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc
+        MIN_PLOT_SIZE: 18
+      testnet3:
+        DIFFICULTY_CONSTANT_FACTOR: 10052721566054
+        GENESIS_CHALLENGE: ca7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015af
+        GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: 3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af
+        GENESIS_PRE_FARM_POOL_PUZZLE_HASH: d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc
+        MEMPOOL_BLOCK_BUFFER: 10
+        MIN_PLOT_SIZE: 18
+      testnet4:
+        DIFFICULTY_CONSTANT_FACTOR: 10052721566054
+        DIFFICULTY_STARTING: 30
+        EPOCH_BLOCKS: 768
+        GENESIS_CHALLENGE: dd7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015af
+        GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: 3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af
+        GENESIS_PRE_FARM_POOL_PUZZLE_HASH: d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc
+        MEMPOOL_BLOCK_BUFFER: 10
+        MIN_PLOT_SIZE: 18
+      testnet5:
+        DIFFICULTY_CONSTANT_FACTOR: 10052721566054
+        DIFFICULTY_STARTING: 30
+        EPOCH_BLOCKS: 768
+        GENESIS_CHALLENGE: ee7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015af
+        GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: 3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af
+        GENESIS_PRE_FARM_POOL_PUZZLE_HASH: d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc
+        MEMPOOL_BLOCK_BUFFER: 10
+        MIN_PLOT_SIZE: 18
+      testnet7:
+        DIFFICULTY_CONSTANT_FACTOR: 10052721566054
+        DIFFICULTY_STARTING: 30
+        EPOCH_BLOCKS: 768
+        GENESIS_CHALLENGE: 117816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015af
+        GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: 3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af
+        GENESIS_PRE_FARM_POOL_PUZZLE_HASH: d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc
+        MEMPOOL_BLOCK_BUFFER: 50
+        MIN_PLOT_SIZE: 18
+  pool_public_keys: !!set
+    869a6526d17e266eb91071efd7dcda90e5260b9ab0b829fcc9c7ee385e0b894567fc2e5d64a03235b1aa8841cad46cdb: null
+  pool_share_threshold: 1000
+  port: 8447
+  rpc_port: 8559
+  selected_network: testnet10
+  ssl:
+    private_crt: config/ssl/farmer/private_farmer.crt
+    private_key: config/ssl/farmer/private_farmer.key
+    public_crt: config/ssl/farmer/public_farmer.crt
+    public_key: config/ssl/farmer/public_farmer.key
+  start_rpc_server: true
+  xch_target_address: txch1ztlxh9x5kxapmyqaavvy0yfeksln8m6xfm46pw26fgdnjd5hewyq855klv
+full_node:
+  database_path: db/blockchain_v2_CHALLENGE.sqlite
+  db_readers: 4
+  db_sync: auto
+  dns_servers: []
+  enable_memory_profiler: false
+  enable_profiler: false
+  enable_upnp: true
+  exempt_peer_networks: []
+  farmer_peer:
+    host: localhost
+    port: 8447
+  introducer_peer: null
+  log_sqlite_cmds: false
+  logging: *id001
+  max_inbound_farmer: 10
+  max_inbound_timelord: 5
+  max_inbound_wallet: 20
+  max_subscribe_items: 200000
+  max_subscribe_response_items: 100000
+  multiprocessing_start_method: default
+  network_overrides: *id002
+  peer_connect_interval: 50
+  peer_connect_timeout: 30
+  peer_db_path: db/peer_table_node.sqlite
+  peers_file_path: db/peers.dat
+  port: 43994
+  recent_peer_threshold: 6000
+  reserved_cores: 0
+  rpc_port: 23005
+  sanitize_weight_proof_only: false
+  selected_network: simulator0
+  send_uncompact_interval: 0
+  short_sync_blocks_behind_threshold: 20
+  single_threaded: false
+  ssl:
+    private_crt: config/ssl/full_node/private_full_node.crt
+    private_key: config/ssl/full_node/private_full_node.key
+    public_crt: config/ssl/full_node/public_full_node.crt
+    public_key: config/ssl/full_node/public_full_node.key
+  start_rpc_server: true
+  sync_blocks_behind_threshold: 300
+  target_outbound_peer_count: 8
+  target_peer_count: 80
+  target_uncompact_proofs: 30
+  timelord_peer:
+    host: localhost
+    port: 8446
+  trusted_max_subscribe_items: 2000000
+  trusted_max_subscribe_response_items: 500000
+  trusted_peers:
+    0ThisisanexampleNodeID7ff9d60f1c3fa270c213c0ad0cb89c01274634a7c3cb7: Does_not_matter
+  use_chia_loop_policy: true
+  wallet_peer:
+    host: localhost
+    port: 22899
+  weight_proof_timeout: 360
+harvester:
+  chia_ssl_ca:
+    crt: config/ssl/ca/chia_ca.crt
+    key: config/ssl/ca/chia_ca.key
+  farmer_peer:
+    host: localhost
+    port: 8447
+  logging: *id001
+  network_overrides: *id002
+  num_threads: 30
+  parallel_read: true
+  plot_directories:
+    - .
+  plots_refresh_parameter:
+    batch_size: 300
+    batch_sleep_milliseconds: 1
+    interval_seconds: 120
+    retry_invalid_seconds: 1200
+  port: 8448
+  private_ssl_ca:
+    crt: config/ssl/ca/private_ca.crt
+    key: config/ssl/ca/private_ca.key
+  recursive_plot_scan: false
+  rpc_port: 8560
+  selected_network: testnet10
+  ssl:
+    private_crt: config/ssl/harvester/private_harvester.crt
+    private_key: config/ssl/harvester/private_harvester.key
+  start_rpc_server: true
+inbound_rate_limit_percent: 100
+introducer:
+  host: localhost
+  logging: *id001
+  max_peers_to_send: 20
+  network_overrides: *id002
+  port: 58444
+  recent_peer_threshold: 6000
+  selected_network: testnet10
+  ssl:
+    public_crt: config/ssl/full_node/public_full_node.crt
+    public_key: config/ssl/full_node/public_full_node.key
+logging: *id001
+min_mainnet_k_size: 32
+network_overrides: *id002
+outbound_rate_limit_percent: 30
+ping_interval: 120
+pool:
+  logging: *id001
+  network_overrides: *id002
+  selected_network: testnet10
+  xch_target_address: txch1ztlxh9x5kxapmyqaavvy0yfeksln8m6xfm46pw26fgdnjd5hewyq855klv
+prefer_ipv6: false
+private_ssl_ca:
+  crt: config/ssl/ca/private_ca.crt
+  key: config/ssl/ca/private_ca.key
+seeder:
+  bootstrap_peers:
+    - testnet10-node.chia.net
+  crawler:
+    rpc_port: 8561
+    ssl:
+      private_crt: config/ssl/crawler/private_crawler.crt
+      private_key: config/ssl/crawler/private_crawler.key
+    start_rpc_server: true
+  crawler_db_path: ""
+  domain_name: ""
+  logging: *id001
+  minimum_height: 240000
+  minimum_version_count: 100
+  nameserver: ""
+  network_overrides: *id002
+  other_peers_port: 58444
+  peer_connect_timeout: 2
+  port: 58444
+  selected_network: testnet10
+  soa:
+    expire: 604800
+    minimum: 1800
+    refresh: 10800
+    retry: 10800
+    rname: hostmaster.example.com.
+    serial_number: 1619105223
+  ttl: 300
+selected_network: simulator0
+self_hostname: localhost
+simulator:
+  auto_farm: false
+  farming_address: txch1a7wl6huvfck2x3rs5azynj7y65n8r4d33g63mh5d6ee4tzzh7j8s9w64sc
+  key_fingerprint: 3682562999
+  plot_directory: .
+  use_current_time: true
+timelord:
+  bluebox_mode: false
+  fast_algorithm: false
+  full_node_peer:
+    host: localhost
+    port: 58444
+  logging: *id001
+  max_connection_time: 60
+  multiprocessing_start_method: default
+  network_overrides: *id002
+  port: 8446
+  rpc_port: 8557
+  selected_network: testnet10
+  slow_bluebox: false
+  slow_bluebox_process_count: 1
+  ssl:
+    private_crt: config/ssl/timelord/private_timelord.crt
+    private_key: config/ssl/timelord/private_timelord.key
+    public_crt: config/ssl/timelord/public_timelord.crt
+    public_key: config/ssl/timelord/public_timelord.key
+  start_rpc_server: true
+  vdf_clients:
+    ip:
+      - localhost
+      - localhost
+      - 127.0.0.1
+    ips_estimate:
+      - 150000
+  vdf_server:
+    host: localhost
+    port: 8000
+timelord_launcher:
+  host: localhost
+  logging: *id001
+  port: 8000
+  process_count: 3
+ui:
+  daemon_host: localhost
+  daemon_port: 40950
+  daemon_ssl:
+    private_crt: config/ssl/daemon/private_daemon.crt
+    private_key: config/ssl/daemon/private_daemon.key
+  logging: *id001
+  network_overrides: *id002
+  port: 8222
+  rpc_port: 8555
+  selected_network: testnet10
+  ssh_filename: config/ssh_host_key
+wallet:
+  automatically_add_unknown_cats: false
+  connect_to_unknown_peers: true
+  database_path: wallet/db/blockchain_wallet_v2_CHALLENGE_KEY.sqlite
+  db_readers: 2
+  db_sync: auto
+  dns_servers: []
+  enable_memory_profiler: false
+  enable_notifications: true
+  enable_profiler: false
+  full_node_peer:
+    host: localhost
+    port: 43994
+  inbound_rate_limit_percent: 100
+  initial_num_public_keys: 425
+  introducer_peer: null
+  log_sqlite_cmds: false
+  logging: *id001
+  multiprocessing_start_method: default
+  network_overrides: *id002
+  nft_metadata_cache_hash_length: 3
+  nft_metadata_cache_path: nft_cache
+  outbound_rate_limit_percent: 60
+  peer_connect_interval: 60
+  port: 22899
+  recent_peer_threshold: 6000
+  required_notification_amount: 10000000
+  reset_sync_for_fingerprint: null
+  reuse_public_key_for_change:
+    "2999502625": false
+  rpc_port: 23706
+  selected_network: simulator0
+  short_sync_blocks_behind_threshold: 20
+  spam_filter_after_n_txs: 200
+  ssl:
+    private_crt: config/ssl/wallet/private_wallet.crt
+    private_key: config/ssl/wallet/private_wallet.key
+    public_crt: config/ssl/wallet/public_wallet.crt
+    public_key: config/ssl/wallet/public_wallet.key
+  target_peer_count: 3
+  testing: false
+  trusted_peers:
+    0ThisisanexampleNodeID7ff9d60f1c3fa270c213c0ad0cb89c01274634a7c3cb9: Does_not_matter
+  tx_resend_timeout_secs: 1800
+  wallet_peers_file_path: wallet/db/wallet_peers.dat
+  wallet_peers_path: wallet/db/wallet_peers.sqlite
+  weight_proof_timeout: 360
+  xch_spam_amount: 1000000
