@@ -9,28 +9,7 @@ cd my-chia-sim-cats
 #### PowerShell
 
 ```sh
-$CHIA_SIM_ROOT=(pwd)
-$env:CHIA_ROOT="$($CHIA_SIM_ROOT)/main"
-$env:CHIA_KEYS_ROOT="$($env:CHIA_ROOT)/keys"
-$CHIA_KEYS_ROOT=$env:CHIA_KEYS_ROOT
-
-```
-
-#### bash
-
-```sh
-export CHIA_SIM_ROOT="$(pwd)"
-export CHIA_ROOT="$CHIA_SIM_ROOT/main"
-export CHIA_KEYS_ROOT="$CHIA_ROOT/keys"
-
-```
-
-> make sure CHIA_ROOT and CHIA_KEYS_ROOT are set correctly before proceed
-
-```sh
-chia init --fix-ssl-permissions
-chia keys add -l farmer -f $CHIA_KEYS_ROOT/farmer.txt
-
+. ./setup.ps1
 ```
 
 ### start
@@ -56,14 +35,18 @@ Node ID: 450cdcb05b9e200211ff9f2713b08c51da2f78b111c04a035be4742b9c28be29
 Genesis Challenge: eb8c4d20b322be8d9fddbf9412016bdffe9a2901d7edb0e364e94266d0e095f7
 Current Blockchain Status: Full Node Synced
 
-Peak: Hash: a0058288f6558141171af50444f5e464b7ea8501a8cb702f57d9a42cbb824337
-      Time: Tue Oct 24 2023 11:40:07 CDT                  Height:          4
+Peak: Hash: e5dfeee2f5af283ada47baec6a6d726bd2ddb08016b7f4c15ba315a0328c1aac
+      Time: Tue Oct 24 2023 14:09:06 CDT                  Height:          8
 
-Estimated network space: 36.793 MiB
+Estimated network space: 23.790 MiB
 Current difficulty: 1024
 Current VDF sub_slot_iters: 1024
 
   Height: |   Hash:
+        8 | e5dfeee2f5af283ada47baec6a6d726bd2ddb08016b7f4c15ba315a0328c1aac
+        7 | 56869037dab55e9d87c544da7ef73dac69c6c99d6b8cec0369bd4b77069e744e
+        6 | aa064992ccb6dd6192592ddc77d48513efdaa721d6b96b4e2fcf24e8d638c163
+        5 | c3199d1f5cf7f270be4ce921202ecf80598a221b3d6f8d8523da2c48f139d811
         4 | a0058288f6558141171af50444f5e464b7ea8501a8cb702f57d9a42cbb824337
         3 | f6cc5e2ddf81a32ee691669c80d81bd919718d52d19d9d869d923073380bbfaf
         2 | c08d327607e59e86d9ef6bc281a9403a33284b276adf2ae375f9196fe21e9ace
