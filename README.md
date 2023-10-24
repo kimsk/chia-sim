@@ -56,14 +56,15 @@ Node ID: 450cdcb05b9e200211ff9f2713b08c51da2f78b111c04a035be4742b9c28be29
 Genesis Challenge: eb8c4d20b322be8d9fddbf9412016bdffe9a2901d7edb0e364e94266d0e095f7
 Current Blockchain Status: Full Node Synced
 
-Peak: Hash: f6cc5e2ddf81a32ee691669c80d81bd919718d52d19d9d869d923073380bbfaf
-      Time: Tue May 30 2023 15:41:23 +07                  Height:          3
+Peak: Hash: a0058288f6558141171af50444f5e464b7ea8501a8cb702f57d9a42cbb824337
+      Time: Tue Oct 24 2023 11:40:07 CDT                  Height:          4
 
-Estimated network space: 25.956 MiB
+Estimated network space: 36.793 MiB
 Current difficulty: 1024
 Current VDF sub_slot_iters: 1024
 
   Height: |   Hash:
+        4 | a0058288f6558141171af50444f5e464b7ea8501a8cb702f57d9a42cbb824337
         3 | f6cc5e2ddf81a32ee691669c80d81bd919718d52d19d9d869d923073380bbfaf
         2 | c08d327607e59e86d9ef6bc281a9403a33284b276adf2ae375f9196fe21e9ace
         1 | bd03b58cba7ebd698ec3f6c7fb2b2a97c0b7bb6212aac02bf7762159f8161bc7
@@ -80,14 +81,14 @@ Pool public key (m/12381/8444/1/0): 869a6526d17e266eb91071efd7dcda90e5260b9ab0b8
 First wallet address: txch1ztlxh9x5kxapmyqaavvy0yfeksln8m6xfm46pw26fgdnjd5hewyq855klv
 
 ❯ chia wallet show -f 3682562999
-Wallet height: 3
+Wallet height: 4
 Sync status: Synced
 Balances, fingerprint: 3682562999
 
 Chia Wallet:
-   -Total Balance:         21000002.0 txch (21000002000000000000 mojo)
-   -Pending Total Balance: 21000002.0 txch (21000002000000000000 mojo)
-   -Spendable:             21000002.0 txch (21000002000000000000 mojo)
+   -Total Balance:         21000004.0 txch (21000003999999999999 mojo)
+   -Pending Total Balance: 21000004.0 txch (21000003999999999999 mojo)
+   -Spendable:             21000004.0 txch (21000003999999999999 mojo)
    -Type:                  STANDARD_WALLET
    -Wallet ID:             1
 
@@ -107,6 +108,21 @@ CAT2:
    -Asset ID:              1b19cf566eb4e2bf9f563eac9b0263c1bd8b1007163da62436306699142fc71d
    -Wallet ID:             3
 
+chialisper:
+   -Total Balance:         1.0
+   -Pending Total Balance: 1.0
+   -Spendable:             1.0
+   -Type:                  DECENTRALIZED_ID
+   -DID ID:                did:chia:1ysje70mewjnge6zz4xaj6en88x9tkxud3sf7s8yfs9dda4gudlaq5qx0sf
+   -Wallet ID:             4
+
+chialisper NFT Wallet:
+   -Total Balance:         0.0
+   -Pending Total Balance: 0.0
+   -Spendable:             0.0
+   -Type:                  NFT
+   -DID ID:                did:chia:1ysje70mewjnge6zz4xaj6en88x9tkxud3sf7s8yfs9dda4gudlaq5qx0sf
+   -Wallet ID:             5
 ```
 
 # Notes
@@ -138,3 +154,26 @@ chia dev sim --root-path $CHIA_SIM_ROOT autofarm on
 
 - CAT1: `657bdae0165c622f635374e539ef7e4632750ecc87541071478c21a7ba67096c`
 - CAT2: `1b19cf566eb4e2bf9f563eac9b0263c1bd8b1007163da62436306699142fc71d`
+
+## DID `did:chia:1ysje70mewjnge6zz4xaj6en88x9tkxud3sf7s8yfs9dda4gudlaq5qx0sf`
+
+```sh
+❯ chia wallet did get_did -i 4
+DID:                    did:chia:1ysje70mewjnge6zz4xaj6en88x9tkxud3sf7s8yfs9dda4gudlaq5qx0sf
+Coin ID:                0x84bcafe525cec77f8394f8e4737001402e4977c18f1ba6594ab18f902517a160
+
+❯ cdv decode did:chia:1ysje70mewjnge6zz4xaj6en88x9tkxud3sf7s8yfs9dda4gudlaq5qx0sf
+24259f3f7974a68ce842a9bb2d6667398abb1b8d8c13e81c89815aded51c6ffa
+                                                                                                                                    ❯ chia wallet did get_details -id 24259f3f7974a68ce842a9bb2d6667398abb1b8d8c13e81c89815aded51c6ffa
+DID:                    did:chia:1ysje70mewjnge6zz4xaj6en88x9tkxud3sf7s8yfs9dda4gudlaq5qx0sf
+Coin ID:                84bcafe525cec77f8394f8e4737001402e4977c18f1ba6594ab18f902517a160
+Inner P2 Address:       txch1xa4m9jsns9rmk6hdh0wg2huh949jl4rn3s33hwm5ehvuzft96caqajxx47
+Public Key:             b79ce1053f997f2642207e4953964ea14b0ee198bbd986075f69923099620b5ac20e9b5ba4a3ebfab0a331e6d57d256b
+Launcher ID:            24259f3f7974a68ce842a9bb2d6667398abb1b8d8c13e81c89815aded51c6ffa
+DID Metadata:           {}
+Recovery List Hash:     4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a
+Recovery Required Verifications: 0
+Last Spend Puzzle:      0xff02ffff01ff02ffff01ff02ffff03ffff18ff2fff3480ffff01ff04ffff04ff20ffff04ff2fff808080ffff04ffff02ff3effff04ff02ffff04ff05ffff04ffff02ff2affff04ff02ffff04ff27ffff04ffff02ffff03ff77ffff01ff02ff36ffff04ff02ffff04ff09ffff04ff57ffff04ffff02ff2effff04ff02ffff04ff05ff80808080ff808080808080ffff011d80ff0180ffff04ffff02ffff03ff77ffff0181b7ffff015780ff0180ff808080808080ffff04ff77ff808080808080ffff02ff3affff04ff02ffff04ff05ffff04ffff02ff0bff5f80ffff01ff8080808080808080ffff01ff088080ff0180ffff04ffff01ffffffff4947ff0233ffff0401ff0102ffffff20ff02ffff03ff05ffff01ff02ff32ffff04ff02ffff04ff0dffff04ffff0bff3cffff0bff34ff2480ffff0bff3cffff0bff3cffff0bff34ff2c80ff0980ffff0bff3cff0bffff0bff34ff8080808080ff8080808080ffff010b80ff0180ffff02ffff03ffff22ffff09ffff0dff0580ff2280ffff09ffff0dff0b80ff2280ffff15ff17ffff0181ff8080ffff01ff0bff05ff0bff1780ffff01ff088080ff0180ff02ffff03ff0bffff01ff02ffff03ffff02ff26ffff04ff02ffff04ff13ff80808080ffff01ff02ffff03ffff20ff1780ffff01ff02ffff03ffff09ff81b3ffff01818f80ffff01ff02ff3affff04ff02ffff04ff05ffff04ff1bffff04ff34ff808080808080ffff01ff04ffff04ff23ffff04ffff02ff36ffff04ff02ffff04ff09ffff04ff53ffff04ffff02ff2effff04ff02ffff04ff05ff80808080ff808080808080ff738080ffff02ff3affff04ff02ffff04ff05ffff04ff1bffff04ff34ff8080808080808080ff0180ffff01ff088080ff0180ffff01ff04ff13ffff02ff3affff04ff02ffff04ff05ffff04ff1bffff04ff17ff8080808080808080ff0180ffff01ff02ffff03ff17ff80ffff01ff088080ff018080ff0180ffffff02ffff03ffff09ff09ff3880ffff01ff02ffff03ffff18ff2dffff010180ffff01ff0101ff8080ff0180ff8080ff0180ff0bff3cffff0bff34ff2880ffff0bff3cffff0bff3cffff0bff34ff2c80ff0580ffff0bff3cffff02ff32ffff04ff02ffff04ff07ffff04ffff0bff34ff3480ff8080808080ffff0bff34ff8080808080ffff02ffff03ffff07ff0580ffff01ff0bffff0102ffff02ff2effff04ff02ffff04ff09ff80808080ffff02ff2effff04ff02ffff04ff0dff8080808080ffff01ff0bffff0101ff058080ff0180ff02ffff03ffff21ff17ffff09ff0bff158080ffff01ff04ff30ffff04ff0bff808080ffff01ff088080ff0180ff018080ffff04ffff01ffa07faa3253bfddd1e0decb0906b2dc6247bbc4cf608f58345d173adb63e8b47c9fffa024259f3f7974a68ce842a9bb2d6667398abb1b8d8c13e81c89815aded51c6ffaa0eff07522495060c066f66f32acc2a77e3a3e737aca8baea4d1a64ea4cdc13da9ffff04ffff01ff02ffff01ff02ffff01ff02ffff03ff81bfffff01ff02ff05ff82017f80ffff01ff02ffff03ffff22ffff09ffff02ff7effff04ff02ffff04ff8217ffff80808080ff0b80ffff15ff17ff808080ffff01ff04ffff04ff28ffff04ff82017fff808080ffff04ffff04ff34ffff04ff8202ffffff04ff82017fffff04ffff04ff8202ffff8080ff8080808080ffff04ffff04ff38ffff04ff822fffff808080ffff02ff26ffff04ff02ffff04ff2fffff04ff17ffff04ff8217ffffff04ff822fffffff04ff8202ffffff04ff8205ffffff04ff820bffffff01ff8080808080808080808080808080ffff01ff088080ff018080ff0180ffff04ffff01ffffffff313dff4946ffff0233ff3c04ffffff0101ff02ff02ffff03ff05ffff01ff02ff3affff04ff02ffff04ff0dffff04ffff0bff2affff0bff22ff3c80ffff0bff2affff0bff2affff0bff22ff3280ff0980ffff0bff2aff0bffff0bff22ff8080808080ff8080808080ffff010b80ff0180ffffff02ffff03ff17ffff01ff02ffff03ff82013fffff01ff04ffff04ff30ffff04ffff0bffff0bffff02ff36ffff04ff02ffff04ff05ffff04ff27ffff04ff82023fffff04ff82053fffff04ff820b3fff8080808080808080ffff02ff7effff04ff02ffff04ffff02ff2effff04ff02ffff04ff2fffff04ff5fffff04ff82017fff808080808080ff8080808080ff2f80ff808080ffff02ff26ffff04ff02ffff04ff05ffff04ff0bffff04ff37ffff04ff2fffff04ff5fffff04ff8201bfffff04ff82017fffff04ffff10ff8202ffffff010180ff808080808080808080808080ffff01ff02ff26ffff04ff02ffff04ff05ffff04ff37ffff04ff2fffff04ff5fffff04ff8201bfffff04ff82017fffff04ff8202ffff8080808080808080808080ff0180ffff01ff02ffff03ffff15ff8202ffffff11ff0bffff01018080ffff01ff04ffff04ff20ffff04ff82017fffff04ff5fff80808080ff8080ffff01ff088080ff018080ff0180ff0bff17ffff02ff5effff04ff02ffff04ff09ffff04ff2fffff04ffff02ff7effff04ff02ffff04ffff04ff09ffff04ff0bff1d8080ff80808080ff808080808080ff5f80ffff04ffff0101ffff04ffff04ff2cffff04ff05ff808080ffff04ffff04ff20ffff04ff17ffff04ff0bff80808080ff80808080ffff0bff2affff0bff22ff2480ffff0bff2affff0bff2affff0bff22ff3280ff0580ffff0bff2affff02ff3affff04ff02ffff04ff07ffff04ffff0bff22ff2280ff8080808080ffff0bff22ff8080808080ff02ffff03ffff07ff0580ffff01ff0bffff0102ffff02ff7effff04ff02ffff04ff09ff80808080ffff02ff7effff04ff02ffff04ff0dff8080808080ffff01ff0bffff0101ff058080ff0180ff018080ffff04ffff01ff02ffff01ff02ffff01ff02ffff03ff0bffff01ff02ffff03ffff09ff05ffff1dff0bffff1effff0bff0bffff02ff06ffff04ff02ffff04ff17ff8080808080808080ffff01ff02ff17ff2f80ffff01ff088080ff0180ffff01ff04ffff04ff04ffff04ff05ffff04ffff02ff06ffff04ff02ffff04ff17ff80808080ff80808080ffff02ff17ff2f808080ff0180ffff04ffff01ff32ff02ffff03ffff07ff0580ffff01ff0bffff0102ffff02ff06ffff04ff02ffff04ff09ff80808080ffff02ff06ffff04ff02ffff04ff0dff8080808080ffff01ff0bffff0101ff058080ff0180ff018080ffff04ffff01b0b79ce1053f997f2642207e4953964ea14b0ee198bbd986075f69923099620b5ac20e9b5ba4a3ebfab0a331e6d57d256bff018080ffff04ffff01a04bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459affff04ffff0180ffff04ffff01ffa07faa3253bfddd1e0decb0906b2dc6247bbc4cf608f58345d173adb63e8b47c9fffa024259f3f7974a68ce842a9bb2d6667398abb1b8d8c13e81c89815aded51c6ffaa0eff07522495060c066f66f32acc2a77e3a3e737aca8baea4d1a64ea4cdc13da9ffff04ffff0180ff01808080808080ff01808080
+Last Spend Solution:    [['0x735e44a4a6a1b403306e095c9b3c0cbfcc0b47bc607fa8bb22f64d5051db451d', '0x01'], '0x01', ['0x01', ['0x', ['0x01', ['0x33', '0xa67aa6a99ca3fa69046f0e494ad1fc3db29ca0b1f97c23a5985e44e63c898079', '0x01', ['0x376bb2ca138147bb6aedbbdc855f972d4b2fd4738c231bbb74cdd9c12565d63a']]], '0x']]]
+Last Spend Hints:       ['376bb2ca138147bb6aedbbdc855f972d4b2fd4738c231bbb74cdd9c12565d63a']
+```
