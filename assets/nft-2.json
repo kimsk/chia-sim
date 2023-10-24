@@ -1,0 +1,12 @@
+{
+  "wallet_id": 5,
+  "uris": ["https://avatars.githubusercontent.com/u/116863?v=4"],
+  "hash": "f362ef7da5afb75b5a4957374ceb906140bd951649d728535903d3f0b2ec872b",
+  "license_uris": [
+    "https://raw.githubusercontent.com/Chia-Network/chia-blockchain/main/LICENSE"
+  ],
+  "license_hash": "30a358857da6b49f57cfe819c1ca43bfe007f528eb784df5da5cb64577e0ffc6",
+  "royalty_address": "txch129hym5vzv9e69tmhh988mm6w8k2ptvtktaqduqdtvq5ma92m389qdjdw98",
+  "royalty_percentage": 200,
+  "target_address": "txch19zql9t2u7k2z6sm2vcge9jdy627egdt424hms6rv04u3dy58mdlsxeydp9"
+}
