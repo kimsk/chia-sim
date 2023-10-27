@@ -19,7 +19,7 @@ function Set-ChiaPSVariables {
 
 $key_files = Get-ChildItem -Path $CHIA_KEYS_ROOT -Filter *.txt
 foreach($key_file in $key_files) {
-    chia keys add -l farmer -f $key_file.FullName
+    chia keys add -l $key_file.BaseName -f $key_file.FullName
 }
 
 Set-ChiaPSVariables
