@@ -12,6 +12,8 @@ cd my-chia-sim-cats
 . ./setup.ps1
 ```
 
+> set up script will set up environment variables and add keys
+
 ### start
 
 ```sh

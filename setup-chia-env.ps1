@@ -1,0 +1,4 @@
+$CHIA_SIM_ROOT=(pwd)
+$env:CHIA_ROOT="$($CHIA_SIM_ROOT)/main"
+$env:CHIA_KEYS_ROOT="$($env:CHIA_ROOT)/keys"
+$CHIA_KEYS_ROOT=$env:CHIA_KEYS_ROOT
